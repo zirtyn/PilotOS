@@ -1,0 +1,77 @@
+body {
+    background-image: linear-gradient(140deg, #a45656, #b23232, #601313);
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(140deg, #402d2d, #271919, #191919);
+    box-shadow: 0 0 10px #381919;
+    width: auto;
+    height: auto;
+    padding: 3vw;
+}
+aside img {
+    height: auto;
+    width: 18vw;
+}
+aside * {
+    display: inline;
+    height: auto;
+    text-align: center;
+    color: #eee;
+    font: 1.5em 'Poppins-SemiBold';
+}
+#txt-dados {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+}
+#txt-dados * {
+    height: auto;
+    width: auto;
+    margin: 0;
+    line-height: 0.9;
+}
+#txt-dados p {
+    font: 1em 'Poppins-Regular';
+}
+aside button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 3em;
+    color: #c46262;
+    width: auto;
+}
+.radio-container {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+}
+.radio-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    padding: 1vw;
+    border-radius: 1vw;
+    background-image: linear-gradient(140deg, #d3d3d3, #a79898b0);
+    font: 0.9em 'Poppins-Regular';
+}
+.radio-card img {
+    height: auto;
+    width: 10vw;
+}
+.radio-card h3, .radio-card p {
+    display: inline;
+    height: auto;
+    width: auto;
+    margin: 0;
+}

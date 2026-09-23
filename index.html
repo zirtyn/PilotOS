@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilot-OS Protótipo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="orientation">
+        <div>
+            <h1>Gire seu dispositivo para<br> melhor experiência.</h1>
+            <img src="images/girar.png" alt="logo">
+        </div>
+    </div>
+        <div class="navigation">
+            <nav id="principalNav">
+                <!-- clock -->
+                <div id="clock"></div>
+                    <script src="clock.js"></script>
+                <!-- date -->
+                <div id="date"></div>
+                    <script src="date.js"></script>
+                <!-- separator -->
+                <div class="separator"></div>
+                <!-- home -->
+                <a href="index.html">
+                    <img src="images/home.png" alt="home">
+                </a>
+                <!-- volume -->
+                <button id="btnAbrirVolume">
+                    <img src="images/volume.png" alt="volumeButton">
+                </button>
+                <!-- Estrutura do Popup Volume -->
+                <div id="popupVolume" class="popup-overlay">
+                    <div class="popup-content">
+                        <span class="close-btn">&times;</span>
+                        <img src="images/volume.png" alt="volumeLogo">
+                        <input type="range" id="sliderVolume" min="0" max="1" step="0.1" value="1">
+                        <p>Volume: <span id="valorVolume">100%</span></p>
+                    </div>
+                </div>
+                 <!-- bluetooth -->
+                <button id="btnAbrirBluetooth">
+                    <img src="images/bluetooth.png" alt="bluetoothButton">
+                </button>
+                 <!-- Estrutura do Popup bluetooth -->
+                <div id="popupBluetooth" class="popup-overlay">
+                    <div class="popup-content">
+                        <span class="close-blue">&times;</span>
+                        <img src="images/bluetooth.png" alt="bluetoothLogo">
+                        <h2>Escaneando aparelhos
+                            <span class="reticencias"></span>
+                        </h2>
+                    </div>
+                </div>
+                <script src="volume.js"></script>
+                <script src="bluetooth.js"></script>
+                <!-- back -->
+                <a href="index.html">
+                    <img src="images/back.png" alt="back">
+                </a>
+                <a href="camera.html">
+                    <img src="images/camera.png" alt="camera">
+                </a>
+            </nav>
+            <nav id="appsNav">
+                <a href="https://spotify.com" id="spotify">
+                    <img src="images/musicplayer.png" alt="spotify">
+                    <div class="redirect">
+                        <p>Isso o redirecionará para spotify.com</p>
+                    </div>
+                </a>
+                <a href="radio.html">
+                    <img src="images/radio.png" alt="radio">
+                </a>
+                <a href="https://youtube.com"  id="yt">
+                    <img src="images/youtube.png" alt="youtube">
+                    <div class="redirect">
+                        <p>Isso o redirecionará para youtube.com</p>
+                    </div>
+                </a>
+                <a href="https://www.google.com/maps/" id="maps">
+                    <img src="images/maps.png" alt="maps">
+                    <div class="redirect">
+                        <p>Isso o redirecionará para google.com/maps</p>
+                    </div>
+                </a>
+                <button>
+                    <img src="images/otherApps.png" alt="otherApps">
+                </button>
+            </nav>
+        </div>
+    <main>
+        <img src="images/bem-vindo.png" alt="welcome" class="welcome">
+    </main>
+</body>
+</html>

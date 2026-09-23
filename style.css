@@ -1,0 +1,305 @@
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url(fonts/Poppins-SemiBold.ttf);
+}
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(fonts/Poppins-Regular.ttf)
+}
+:root {
+    --white: #eee;
+}
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-image: url(images/wallpaper.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+#orientation {
+    display: none;
+}
+.navigation {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100vh;
+}
+#principalNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(180deg, #594040, #593d3d, #191919);
+    width: 11vw;
+    font-family: 'Poppins-SemiBold';
+    font-size: 4vw;
+    text-align: center;
+    color: var(--white);
+    padding: 0 1vw 0 1vw;
+}
+    #date {
+        font-family: 'Poppins-Regular';
+        font-size: 3vw;
+        padding: 1vh;
+    }
+    #clock {
+        padding-top: 4vh;
+    }
+    #principalNav img {
+        height: auto;
+        width: 4vw;
+    }
+    #principalNav button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .separator {
+        border-bottom: 2px solid var(--white);
+        height: 1px;
+        width: 9vw;
+        margin: 10px 10px 2vh 10px;
+    }
+
+#appsNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 8vw;
+    height: 100svh;
+    background-image: linear-gradient(180deg, #867e7e, #d1b7b7, #cba0a0);
+    box-shadow: 2px 0 6px #f443363d;
+}
+#appsNav a, #appsNav button {
+    display: inline;
+    height: auto;
+    width: 6.5vw;
+    padding: 1vh 0 1vh 0;
+}
+#appsNav button {
+    border: none;
+    background: transparent;
+}
+ #appsNav img {
+    border-radius: 1.3vw;
+    box-shadow: 0 0 10px#3831314a;
+ }
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 10vw;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.redirect {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 37vw;
+    align-items: center;
+    justify-content: center;
+    height: 4em;
+    width: 50vw;
+    background-image: linear-gradient(140deg, #746060ce, #cd8d8dd5,  #bd494982);
+    border-radius: 2vh 2vw 0 0;
+    border: 1px solid #eee;
+    transform-origin: bottom;
+    /* padding-bottom: env(safe-area-inset-bottom); */
+}
+.redirect p {
+    display: inline;
+    text-align: center;
+    text-wrap: wrap;
+    font: 1.4em "Poppins-Regular";
+    padding: .2em;
+    color: #eeeeee;
+}
+#yt:hover .redirect{
+    display: flex;
+    animation: redirect .5s;
+}
+#spotify:hover .redirect{
+    display: flex;
+    animation: redirect .5s;
+}
+#maps:hover .redirect{
+    display: flex;
+    animation: redirect .5s;
+}
+
+    @keyframes redirect{
+        0% {
+            transform: scaleY(70%);
+            opacity: 0%;
+        }
+        100% {
+            transform: scaleY(100%);
+            opacity: 100%;
+        }
+    }
+
+/* Conteúdo do popup */
+.popup-content {
+    position: absolute;
+    background-image: linear-gradient(180deg, #594040ad, #593d3de7, #363434a9);
+    padding: 5vw;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 2vw;
+    border: solid 2px #cec0c0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: slideInLeft 0.2s ease-out;
+}
+#popupVolume img {
+    position: absolute;
+    top: 15vh;
+    left: 25vw;
+    width: 20vh;
+}
+#popupBluetooth img {
+    position: absolute;
+    top: 16vh;
+    left: 25vw;
+    width: 15vh;
+}
+.popup-overlay p{
+    position: relative;
+    font-size: 0.6em;
+    top: -25vh;
+    height: 100%;
+    color: #c0b2b2;
+    font-family: 'Poppins-Regular';
+}
+
+/* procurando aparelhos */
+.popup-content h2 {
+    position: relative;
+    font-size: 0.6em;
+    top: 25vh;
+    height: 100%;
+    color: #c0b2b2;
+    font-family: 'Poppins-Regular';
+
+}
+.popup-content .reticencias {
+    position: relative;
+}
+.popup-content .reticencias::before {
+    content: "";
+    animation: reticencias 2s infinite;
+}
+    @keyframes reticencias {
+        0%, 33% {
+            content: ".";
+        }
+        34%, 63% {
+            content: ".  .";
+        }
+        64%, 100% {
+            content: ". . .";
+        }
+    }
+/* Botão de fechar */
+.close-btn, .close-blue{
+    position: relative;
+    top: 5px;
+    right: -20vw;
+    font-size: 1em;
+    color: var(--white);
+    background-color: #eeeeee1f;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0px 0px 9px #6d5454;
+    padding: 0px 1rem 0px 1rem;
+}   
+#sliderVolume:focus,
+#btnAbrirVolume:focus #btnAbrirBluetooth:focus{
+    outline: none;
+}   
+#sliderVolume {
+    accent-color: var(--white);
+    cursor: pointer;
+}
+
+.widget {
+    padding: 0px;
+    color: red;
+    display: flex;
+}
+.welcome {
+    height: 15vh;
+    width: auto;
+    opacity: calc(80%);
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@media (max-height: 600px){
+    html {
+        height: auto;
+    }
+    #appsNav {
+        height: auto;
+    }
+}
+@media (max-width: 500px) {
+    html {
+        min-height: 100svh;
+    }
+    #orientation {
+        display: flex;
+        text-align: center;
+        font-family: 'Poppins-ExtBold';
+        color: var(--white);
+        background: #690505;
+    }
+    #orientation div {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    h1 {
+        display: inline;
+        height: auto;
+        font-size: 1.7em;
+    }
+    img {
+        height: auto;
+        width: 30%;
+        padding-bottom: 10vh;
+    }
+    .navigation, main{
+        display: none;
+    }
+}
