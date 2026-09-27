@@ -5,48 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pilot-OS Protótipo</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            background-image: linear-gradient(180deg, #1d1c1c, #080808);
-        }
-        .error {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 70%;
-            height: 50%;
-            margin: 5vh;
-            background-color: #080808;
-            border: solid 2px #352d2c;
-            border-radius: 1em;
-            padding: 2vh;
-        }
-        .error h1, h2 {
-            text-align: center;
-            font-family: 'Poppins-Regular';
-            display: inline;
-            color: #e0d4d2;
-            height: auto;
-        }
-        .error h2 {
-            font-size: 1.3em;
-            color: #c9b9b7;
-        }
-        main {
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-        .close-blue {
-            position: absolute;
-            right: 10vh;
-            top: 10vh;
-            height: auto;
-            width: auto;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="css/phone-style.css">
 </head>
 <body>
     <div id="orientation">
@@ -67,7 +26,7 @@
                 <div class="separator"></div>
                 <!-- home -->
                 <a href="index.html">
-                    <img src="images/camera-home.png" alt="home">
+                    <img src="images/home.png" alt="home">
                 </a>
                 <!-- volume -->
                 <button id="btnAbrirVolume">
@@ -103,15 +62,46 @@
                     <img src="images/back.png" alt="back">
                 </a>
                 <a href="camera.html">
-                    <img src="images/camera-camera.png" alt="camera">
+                    <img src="images/camera.png" alt="camera">
                 </a>
             </nav>
         </div>
     <main>
-        <div class="error">
-            <h1>Não foi possível acessar a câmera</h1>
-            <h2>Verifique se seu automóvel possui câmeras instaladas</h2>
+        <div id="contatos">
+            <h1>Contatos</h1>
+            <div class="separator"></div>
+            <h2>Por favor, conecte seu telefone
+            para ver contatos e completar chamadas</h2>
         </div>
+        <aside class="phone">
+            <input type="text" id="display" readonly>
+            <p id="status"></p>
+            <div class="keypad">
+
+                <button data-number="1">1</button>
+                <button data-number="2">2</button>
+                <button data-number="3">3</button>
+
+                <button data-number="4">4</button>
+                <button data-number="5">5</button>
+                <button data-number="6">6</button>
+
+                <button data-number="7">7</button>
+                <button data-number="8">8</button>
+                <button data-number="9">9</button>
+
+                <button data-number="*">*</button>
+                <button data-number="0">0</button>
+                <button data-number="#">#</button>
+
+            </div>
+            <div class="actions">
+                <button id="call">📞</button>
+                <button id="delete">⌫</button>
+            </div>
+
+        </aside>
+        <script src="phone.js"></script>
     </main>
 </body>
 </html>

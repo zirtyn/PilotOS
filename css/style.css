@@ -8,15 +8,23 @@
 }
 :root {
     --white: #eee;
+    --black: #191919;
 }
 * {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    -webkit-user-select: none; /* Chrome, Safari, Edge */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+ */
+    user-select: none;         /* Padrão W3C */
+}
+*:focus {
+    outline: none;
 }
 body {
-    background-image: url(images/wallpaper.png);
+    background-image: url(../images/wallpaper.png);
     background-size: cover;
     display: flex;
     flex-direction: row;
@@ -254,6 +262,39 @@ main {
     opacity: calc(80%);
 }
 
+#otherApps {
+    display: none;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 79vw;
+    height: 100lvh;
+    background-image: linear-gradient(140deg, #59404049, #593d3d75, #19191973);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /*Safari */
+
+}
+#otherApps * {
+    height: auto;
+    width: 20vh;
+}
+#otherApps.open {
+    display: grid;
+    animation: slideApps .4s;
+}
+
+@keyframes slideApps {
+        0% {
+            transform: translateX(10%);
+            opacity: 0%;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 100%;
+        }
+}
 @keyframes slideInLeft {
     from {
         transform: translateX(-10%);

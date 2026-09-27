@@ -37,8 +37,8 @@ slider.addEventListener('input', (e) => {
     document.body.volume = volume; 
     
     // Exemplo 2: Se tiver um elemento de áudio específico, use:
-    // const audio = document.querySelector('audio');
-    // if(audio) audio.volume = volume;
+    const audio = document.querySelector('audio');
+    if(audio) audio.volume = volume;
 });   
 
 

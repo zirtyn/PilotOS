@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pilot-OS Protótipo</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div id="orientation">
@@ -13,7 +13,7 @@
             <img src="images/girar.png" alt="logo">
         </div>
     </div>
-        <div class="navigation">
+    <div class="navigation">
             <nav id="principalNav">
                 <!-- clock -->
                 <div id="clock"></div>
@@ -86,13 +86,49 @@
                         <p>Isso o redirecionará para google.com/maps</p>
                     </div>
                 </a>
-                <button>
+                <button class="otherApps-button">
                     <img src="images/otherApps.png" alt="otherApps">
                 </button>
             </nav>
-        </div>
+    </div>
     <main>
         <img src="images/bem-vindo.png" alt="welcome" class="welcome">
+        <section id="otherApps">
+
+            
+            ¨<img src="images/apps/config.png" alt="settings">
+            
+            <a href="https://open.spotify.com/intl-pt">
+                <img src="images/apps/music.png" alt="musicplayer">
+            </a>
+            <a href="https://play.google.com/store/games?hl=pt_BR">
+                <img src="images/apps/store.png" alt="appstore">
+            </a>
+            <a href="radio.html">
+                <img src="images/apps/radio.png" alt="radio">
+            </a>
+            <a href="phone.html">
+                <img src="images/apps/phone.png" alt="phone">
+            </a>
+            <a href="https://www.youtube.com/">
+                <img src="images/apps/yt.png" alt="youtube">
+            </a>
+            <a href="https://google.com">
+                <img src="images/apps/browser.png" alt="browser">
+            </a>
+            <a href="https://maps.google.com/">
+                <img src="images/apps/maps.png" alt="maps">
+            </a>
+
+        </section>
+        <script>
+            const button = document.querySelector(".otherApps-button");
+            const apps = document.querySelector("#otherApps");
+
+            button.addEventListener("click", () => {
+                apps.classList.toggle("open");
+            });
+        </script>
     </main>
 </body>
 </html>

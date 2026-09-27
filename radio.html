@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pilot-OS Protótipo</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="radio-style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/radio-style.css">
 </head>
 <body>
     <div id="orientation">
@@ -67,8 +67,22 @@
             </nav>
         </div>
     <main>
-        <div id="radio-container" class="radio-container"></div>
-        <aside class="now-playing">
+        <div class="main">
+            <header>
+                <h1>Rádio FM</h1>
+                <h2>
+                <img src="images/brasil.png" alt="Brasil">
+                Rádios do Brasil</h2>
+            </header>
+            <div class="scroll-radios">
+                <div id="radio-container" class="radio-container">
+                    <div id="radio-loading">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aside id="now-playing">
             <h2>Tocando agora:</h2>
             <img
                 id="current-radio-image"
@@ -76,13 +90,13 @@
                 alt="Rádio">
 
             <div id="txt-dados">
-                <h3 id="current-radio-name">naa</h3>
-                <p id="current-radio-genre">g</p>
+                <h3 id="current-radio-name">Nenhuma reprodução</h3>
+                <p id="current-radio-genre">...</p>
             </div>
-            <p id="current-radio-frequency">f</p>
             <button id="play-button">▶</button>
         </aside>
         <script src="radio.js"></script>
+        <audio id="radio-player" controls></audio>
     </main>
 </body>
 </html>
